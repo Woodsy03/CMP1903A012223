@@ -19,17 +19,28 @@ namespace ConsoleApp1
                 foreach (string y in Numbers)
                     Deck.Add(y + " of " + x);
 
-            // 
-
-
-
-
-
             // Prints Shuffled Output
             for (int i = 0; i < Deck.Count; i++)
             {
                 Console.WriteLine(Deck[i]);
             }
+
+            // Prompting user for shuffle type
+            Console.WriteLine("enter a shuffle type");
+            string ShuffleType = Console.ReadLine(); 
+            Console.WriteLine("you chose the " + ShuffleType + " shuffle method." );
+
+            // choosing shuffle via conditional statment
+            if (ShuffleType is "riffle")
+            {
+                Console.WriteLine("yah");
+
+
+            }
+
+
+
+
 
         }
     }
