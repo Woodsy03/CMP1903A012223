@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -27,17 +27,26 @@ namespace ConsoleApp1
 
             // Prompting user for shuffle type
             Console.WriteLine("enter a shuffle type");
-            string ShuffleType = Console.ReadLine(); 
-            Console.WriteLine("you chose the " + ShuffleType + " shuffle method." );
+            string ShuffleType = Console.ReadLine();
+        }
+    }
+
+    public class ShuffleCardPack
+    {
+        static void Main(string[] args)
+        {
+
+
 
             // choosing shuffle via conditional statment
             if (ShuffleType is "riffle")
             {
-                Console.WriteLine("yah");
-
-
+                Console.WriteLine("The Riffle shuffle method has been chosen");
             }
-
+            else
+            {
+                Console.WriteLine("That isn't a valid shuffle method");
+            }
 
 
 
@@ -45,3 +54,8 @@ namespace ConsoleApp1
         }
     }
 }
+
+
+
+
+
