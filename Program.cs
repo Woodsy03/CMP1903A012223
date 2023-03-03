@@ -8,7 +8,7 @@ namespace ConsoleApp1
 {
     public class Program
     {
-        static void Main(string[] args)
+        public void Main(string[] args)
         {
             List<string> Numbers = new List<string>() { "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "King", "Queen", "Ace" };
             List<string> Suites = new List<string>() { "Heart", "Spade", "Club", "Diamond" };
