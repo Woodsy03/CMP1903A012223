@@ -28,6 +28,8 @@ namespace CardShuffler
             // Prompting user for shuffle type
             Console.WriteLine("enter a shuffle type");
             string ShuffleType = Console.ReadLine();
+            ShuffleCardPack p = new ShuffleCardPack();
+            p.Main(ShuffleType);
         }
     }
 
