@@ -29,13 +29,13 @@ namespace CardShuffler
             Console.WriteLine("enter a shuffle type");
             string ShuffleType = Console.ReadLine();
             ShuffleCardPack p = new ShuffleCardPack();
-            p.Main(ShuffleType);
+            p.Main(ShuffleType[]);
         }
     }
 
     public class ShuffleCardPack
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
 
 
