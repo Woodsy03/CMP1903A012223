@@ -29,7 +29,7 @@ namespace CardShuffler
             Console.WriteLine("enter a shuffle type");
             string ShuffleType = Console.ReadLine();
             ShuffleCardPack p = new ShuffleCardPack();
-            p.Main(ShuffleType[]);
+            p.Main(ShuffleType);
         }
     }
 
