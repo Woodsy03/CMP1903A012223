@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,47 +18,47 @@ namespace CardShuffler
             foreach (string x in Suites)
                 foreach (string y in Numbers)
                     Deck.Add(y + " of " + x);
-                      
 
             // Prints Shuffled Output
             for (int i = 0; i < Deck.Count; i++)
             {
                 Console.WriteLine(Deck[i]);
 
-                public UnShuffledDeck p = new UnShuffledDeck();
-                listPb.Add(p);
             }
 
-            
-            
+            // Prompting user for shuffle type
+            Console.WriteLine("enter a shuffle type");
+            //ShuffleCardPack p = new ShuffleCardPack();
+            string ShuffleType = Console.ReadLine();
+
+            if (ShuffleType is "riffle")
+            {
+                Console.WriteLine("the chosen shuffle method is the Riffle Shuffle");
+                Deck = RiffleShuffle(Deck);
+            }
+
         }
     }
 
-    public class ShuffleCardPack
+    public static List<T> RiffleShuffle<T>(List<T> Deck)
     {
-        public static void Main(string[] args)
+        int halfSize = Deck.Count / 2;
+        List<T> shuffledDeck = new List<T>();
+        List<T> leftHalf = Deck.GetRange(0, halfSize);
+        List<T> rightHalf = Deck.GetRange(halfSize, Deck.Count - halfSize);
+
+        for (int i = 0; i < halfSize; i++)
         {
-
-            // Prompting user for shuffle type
-         Console.WriteLine("enter a shuffle type");
-            ShuffleCardPack p = new ShuffleCardPack();
-            string ShuffleType = Console.ReadLine();
-
-            // choosing shuffle via conditional statment
-            if (ShuffleType is "riffle")
-            {
-                Console.WriteLine("The Riffle shuffle method has been chosen");
-
-            }
-            else
-            {
-                Console.WriteLine("That isn't a valid shuffle method");
-            }
-
-
-
-
+            shuffledDeck.Add(leftHalf[i]);
+            shuffledDeck.Add(rightHalf[i]);
         }
+
+        return shuffledDeck;
+
+
+
+
+
     }
 }
 
