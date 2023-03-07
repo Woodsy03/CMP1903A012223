@@ -25,7 +25,7 @@ namespace CardShuffler
             return shuffledDeck;
         }
 
-        public void Main(string[] args)
+        public static void Main(string[] args)
         {
             List<string> Numbers = new List<string>() { "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "King", "Queen", "Ace" };
             List<string> Suites = new List<string>() { "Heart", "Spade", "Club", "Diamond" };
@@ -47,7 +47,6 @@ namespace CardShuffler
 
             // Prompting user for shuffle type
             Console.WriteLine("enter a shuffle type");
-            //ShuffleCardPack p = new ShuffleCardPack();
             string ShuffleType = Console.ReadLine();
 
             if (ShuffleType is "riffle")
@@ -55,6 +54,7 @@ namespace CardShuffler
                 Console.WriteLine("the chosen shuffle method is the Riffle Shuffle");
                 Deck = RiffleShuffle(Deck);
                 Console.WriteLine("your shuffled deck is");
+                Console.WriteLine(Deck);
             }
 
         }
