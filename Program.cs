@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CardShuffler
 {
-    public class DeckGen
+    public class Program
     {
         public void Main(string[] args)
         {
@@ -18,11 +19,15 @@ namespace CardShuffler
             foreach (string x in Suites)
                 foreach (string y in Numbers)
                     Deck.Add(y + " of " + x);
+                      
 
             // Prints Shuffled Output
             for (int i = 0; i < Deck.Count; i++)
             {
                 Console.WriteLine(Deck[i]);
+
+                public UnShuffledDeck p = new UnShuffledDeck();
+                listPb.Add(p);
             }
 
             
@@ -36,7 +41,7 @@ namespace CardShuffler
         {
 
             // Prompting user for shuffle type
-            Console.WriteLine("enter a shuffle type");
+         Console.WriteLine("enter a shuffle type");
             ShuffleCardPack p = new ShuffleCardPack();
             string ShuffleType = Console.ReadLine();
 
@@ -44,18 +49,6 @@ namespace CardShuffler
             if (ShuffleType is "riffle")
             {
                 Console.WriteLine("The Riffle shuffle method has been chosen");
-                Console.WriteLine("UwU");
-
-                // Splitting the deck
-                List<string> FirstHalf = new List<string>();
-                List<string> Split = Deck.GetRange(5, 20);
-                Console.WriteLine("the split it");
-                Console.WriteLine(Split);
-
-                List<string> SecondHalf = new List<string>();
-
-
-
 
             }
             else
