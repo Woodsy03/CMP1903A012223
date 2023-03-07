@@ -25,11 +25,8 @@ namespace CardShuffler
                 Console.WriteLine(Deck[i]);
             }
 
-            // Prompting user for shuffle type
-            Console.WriteLine("enter a shuffle type");
-            string ShuffleType = Console.ReadLine();
-            ShuffleCardPack p = new ShuffleCardPack();
-            p.Main(ShuffleType);
+            
+            
         }
     }
 
@@ -38,7 +35,10 @@ namespace CardShuffler
         public static void Main(string[] args)
         {
 
-
+            // Prompting user for shuffle type
+            Console.WriteLine("enter a shuffle type");
+            ShuffleCardPack p = new ShuffleCardPack();
+            string ShuffleType = Console.ReadLine();
 
             // choosing shuffle via conditional statment
             if (ShuffleType is "riffle")
