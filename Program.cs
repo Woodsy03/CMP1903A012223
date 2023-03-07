@@ -67,8 +67,9 @@ namespace CardShuffler
             }
 
             // Prompting user for shuffle type
-            Console.WriteLine("enter a shuffle type");
-            string ShuffleType = Console.ReadLine();
+            //This functionality was removed in place of he "no shuffle" option which displays the deck regardless
+            /*Console.WriteLine("enter a shuffle type");
+            string ShuffleType = Console.ReadLine(); */
 
             if (ShuffleType is "riffle")
             {
@@ -81,6 +82,10 @@ namespace CardShuffler
                 Console.WriteLine("the chosen shuffle method is the Fisher Yates Shuffle");
                 Deck = RiffleShuffle(Deck);
                 Console.WriteLine("this is your Fisher Yates Shuffled Deck");
+            }
+            if (ShuffleType is "no shuffle")
+            {
+                Console.WriteLine("you have chosen no shuffle. Here is the requested unshuffled deck. ")
             }
 
             for (int i = 0; i < Deck.Count; i++)
