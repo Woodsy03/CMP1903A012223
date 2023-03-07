@@ -8,6 +8,23 @@ namespace CardShuffler
 {
     public class Program
     {
+
+        public static List<T> RiffleShuffle<T>(List<T> Deck)
+        {
+            int halfSize = Deck.Count / 2;
+            List<T> shuffledDeck = new List<T>();
+            List<T> leftHalf = Deck.GetRange(0, halfSize);
+            List<T> rightHalf = Deck.GetRange(halfSize, Deck.Count - halfSize);
+
+            for (int i = 0; i < halfSize; i++)
+            {
+                shuffledDeck.Add(leftHalf[i]);
+                shuffledDeck.Add(rightHalf[i]);
+            }
+
+            return shuffledDeck;
+        }
+
         public void Main(string[] args)
         {
             List<string> Numbers = new List<string>() { "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "King", "Queen", "Ace" };
@@ -19,7 +36,9 @@ namespace CardShuffler
                 foreach (string y in Numbers)
                     Deck.Add(y + " of " + x);
 
+
             // Prints Shuffled Output
+            Console.WriteLine("This is your unshuffled deck");
             for (int i = 0; i < Deck.Count; i++)
             {
                 Console.WriteLine(Deck[i]);
@@ -35,31 +54,13 @@ namespace CardShuffler
             {
                 Console.WriteLine("the chosen shuffle method is the Riffle Shuffle");
                 Deck = RiffleShuffle(Deck);
+                Console.WriteLine("your shuffled deck is");
             }
 
         }
     }
 
-    public static List<T> RiffleShuffle<T>(List<T> Deck)
-    {
-        int halfSize = Deck.Count / 2;
-        List<T> shuffledDeck = new List<T>();
-        List<T> leftHalf = Deck.GetRange(0, halfSize);
-        List<T> rightHalf = Deck.GetRange(halfSize, Deck.Count - halfSize);
 
-        for (int i = 0; i < halfSize; i++)
-        {
-            shuffledDeck.Add(leftHalf[i]);
-            shuffledDeck.Add(rightHalf[i]);
-        }
-
-        return shuffledDeck;
-
-
-
-
-
-    }
 }
 
 
