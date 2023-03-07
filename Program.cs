@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CardShuffler
 {
-    public class Program
+    public class DeckGen
     {
         public void Main(string[] args)
         {
@@ -44,6 +44,19 @@ namespace CardShuffler
             if (ShuffleType is "riffle")
             {
                 Console.WriteLine("The Riffle shuffle method has been chosen");
+                Console.WriteLine("UwU");
+
+                // Splitting the deck
+                List<string> FirstHalf = new List<string>();
+                List<string> Split = Deck.GetRange(5, 20);
+                Console.WriteLine("the split it");
+                Console.WriteLine(Split);
+
+                List<string> SecondHalf = new List<string>();
+
+
+
+
             }
             else
             {
