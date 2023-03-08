@@ -13,10 +13,11 @@ namespace CardShuffler
 
         public static List<T> RiffleShuffle<T>(List<T> Deck)
         {
-            int halfSize = Deck.Count / 2;
+            
+            int MidPoint = Deck.Count / 2; // tends towards 0 hence it will always be the lower half 
             List<T> shuffledDeck = new List<T>();
-            List<T> leftHalf = Deck.GetRange(0, halfSize);
-            List<T> rightHalf = Deck.GetRange(halfSize, Deck.Count - halfSize);
+            List<T> leftHalf = Deck.GetRange(0, MidPoint);
+            List<T> rightHalf = Deck.GetRange(MidPoint, Deck.Count - MidPoint);
 
             for (int i = 0; i < halfSize; i++)
             {
@@ -35,7 +36,6 @@ namespace CardShuffler
                 length = length - 1;
                 Random Range = new Random();
                 int Pos1 = Range.Next(length + 1);
-                Console.WriteLine("pos 1 is " + Pos1);
                 var cache = Deck[Pos1];
                 Deck[Pos1] = Deck[length];
                 Deck[length] = cache;
@@ -46,7 +46,7 @@ namespace CardShuffler
         public static void Main(string[] args)
         {
             List<string> Numbers = new List<string>() { "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "King", "Queen", "Ace" };
-            List<string> Suites = new List<string>() { "Heart", "Spades", "Club", "Diamond" };
+            List<string> Suites = new List<string>() { "Hearts", "Spades", "Clubs", "Diamonds" };
 
             // Ordered Deck Creation
             List<string> Deck = new List<string>();
@@ -77,9 +77,18 @@ namespace CardShuffler
                 Console.WriteLine("you have chosen no shuffle.");
             }
 
-            else
+            else  
             {
-                Console.WriteLine("That wasn't a valid shuffle type.");
+                if (ShuffleType is "")
+                {
+                    Console.WriteLine("no input was provided");
+                }
+                else
+                {
+                    Console.WriteLine("That wasn't a valid shuffle type.");
+                }
+                    
+                
             }
 
             for (int i = 0; i < Deck.Count; i++)
